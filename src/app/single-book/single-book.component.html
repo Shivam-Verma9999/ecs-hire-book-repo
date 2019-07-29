@@ -1,0 +1,27 @@
+<div class="book" >
+    <div><b>TITLE </b>: {{book.title}}</div>
+    <div><b>AUTHORS </b>: {{book.authors}}</div>
+    <div><b> RATING </b>: {{book.average_rating}} <app-star [rating] = "book.average_rating"></app-star></div>
+    <div><b>ISBN</b> : {{book.isbn}}</div>
+    <div><b>language</b> : {{book.language_code}}</div>
+    <div *ngIf="inCart"><b>Price</b> : {{book.price | currency}}</div>
+    <button class="blue" style="
+      border: 1px #2F5BB7 solid;
+      box-shadow: 0 1px 1px #EAEAEA, inset 0 1px 0 #5A94F1;
+      background: #3F83F1;
+    " *ngIf="!inCart" (click)="addToCart()">BUY @{{book.price | currency }}</button>
+    <div *ngIf="inCart"><button style="color: green;" >In Cart</button> <button (click)="removeFromCart()" style="background: -webkit-linear-gradient(top, #DD4B39, #D14836);
+  background: -moz-linear-gradient(top, #DD4B39, #D14836);
+  background: -ms-linear-gradient(top, #DD4B39, #D14836);
+  border: 1px solid #DD4B39;
+  color: white;
+  text-shadow: 0 1px 0 #C04131;">Remove</button></div>
+</div>
+<!-- "bookID": 1,
+    "title": "Harry Potter and the Half-Blood Prince (Harry Potter  #6)",
+    "authors": "J.K. Rowling-Mary GrandPré",
+    "average_rating": 4.56,
+    "isbn": 439785960,
+    "language_code": "eng",
+    "ratings_count": 1944099,
+    "price": 230 -->

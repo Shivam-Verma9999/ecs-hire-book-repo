@@ -1,0 +1,15 @@
+.flex-parent{
+  display: flex;
+}
+.flex{
+  flex:1;
+}
+.red{
+  background: red;
+}
+.sort-by{
+  display: inline-block;
+  margin: 5px;
+  padding: 5px;
+  cursor: pointer;
+}

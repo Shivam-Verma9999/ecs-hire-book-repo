@@ -1,0 +1,17 @@
+<button><a [routerLink]="['/cart']" routerLinkActive="router-link-active"> cart</a></button>
+<div class="flex-parent ">
+  <div class="flex">
+    <div class="sort-by orange" (click)="sortByRating()">
+      <button> Sort by Rating</button>
+    </div>
+    <div class="sort-by">
+          <input type="text" (keyup.enter)="search()"  placeholder="Search book by name" [(ngModel)]="searchTerm" >
+          <button  (click)="search()">Search</button>
+      </div>
+  </div>
+</div>
+<div *ngFor= "let bk of displayBooks; index as i">
+    <div *ngIf=" i < 20">
+      <app-single-book [book] = "bk"></app-single-book>
+    </div>
+</div>

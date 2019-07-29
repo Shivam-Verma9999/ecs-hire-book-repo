@@ -1,0 +1,17 @@
+
+<H2>Your Cart</H2>
+<button><a [routerLink]="['/']" routerLinkActive="router-link-active">Back to Library</a></button>
+
+<div *ngIf="booksInCart" style="display: flex">
+<div *ngFor= "let bk of cartBooks">
+    <div>
+      <app-single-book [book] = "bk"></app-single-book>
+    </div>
+</div>
+<div>
+  <button (click)="checkout()" >CHECKOUT</button>
+</div>
+</div>
+<div *ngIf="!booksInCart">
+ <div style="margin:auto; color: green;">&nbsp;&nbsp;&nbsp;&nbsp;<h3>YOUR CART IS EMPTY</h3></div>
+</div>

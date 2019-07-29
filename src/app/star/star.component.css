@@ -1,0 +1,6 @@
+.checked, .fa-star-half-full{
+  color: green;
+}
+.unchecked{
+  color: #dbdbbd;
+}
